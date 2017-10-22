@@ -7,5 +7,6 @@
 #include <iostream>
 
 int main() {
-	
+	SuitedCard s1;
+	s1.shuffle();
 }

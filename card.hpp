@@ -1,7 +1,10 @@
 #pragma once
 #include <vector>
 #include <iostream>
-#include<assert.h>
+#include <assert.h>
+#include <random>
+#include <algorithm>
+
 enum Rank {
 	None,Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten,
 	Jack, Queen, King
@@ -23,8 +26,8 @@ class SuitedCard:Gambling {
 		
 public:
 	SuitedCard();
-	SuitedCard(Suit s = Clubs, Rank r = Ace, Color c = Black) {};	
-	
+	SuitedCard(Suit s , Rank r , Color c );	
+	void shuffle();
 private:
 	Suit suit;
 	Rank rank;

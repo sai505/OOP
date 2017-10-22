@@ -22,11 +22,17 @@ SuitedCard::SuitedCard() {
 		{ None, Joker, Black },{ None, Joker, Red } };
 }
 
-SuitedCard::SuitedCard(Suit s = Clubs, Rank r = Ace, Color c = Black) {
-	assert (c_vector.size == 52) {
-		std::cout << "full deck" << std::endl;
-
+SuitedCard::SuitedCard(Suit s, Rank r, Color c ) {
+	assert(c_vector.size == 52);
+	c_vector.push_back(r,s,c);
 }
 
+void SuitedCard::shuffle() {
+	std::random_device rng;
+	std::minstd_rand prng;
+	prng.seed(rng());
+
+	std::shuffle(c_vector.begin(), c_vector.end(), prng);
+}
 
 
